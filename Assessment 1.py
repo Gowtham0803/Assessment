@@ -55,7 +55,8 @@ def Getcredentials():
         else:
             return "Password entered is wrong"
     else:
-        return "Details not found. Please Sign Up."
+        print("Details not found. Please Sign Up.")
+        return Checkcredentials()
 
 def Getpassword():
     Mailid=input("Enter Mail ID: ")
@@ -66,9 +67,10 @@ def Getpassword():
         index = Res.index(Mailid) + 1
         usr_password = Res[index]
         print("Password: ",usr_password)
+        print("Success")  
     else:
         print("Mail ID not available. Try Register ")
-    print("Sucess")    
-
+        return Checkcredentials()
+      
 print(Choices()) 
 
